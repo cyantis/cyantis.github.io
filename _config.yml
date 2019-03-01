@@ -1,11 +1,11 @@
 # Site settings
-author: Cody Yantis
-title: 
+author: Cody Y
+title: Binary Blather
 header-img: img/home-bg.png
 email: cyantis@gmail.com
-copyright_name: Cody Yantis
+copyright_name: Cody Y
 description: > # this means to ignore newlines until "baseurl:"
-  
+  Some thoughts on web development and beyond.
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  cyantis
