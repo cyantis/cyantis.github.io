@@ -6,7 +6,7 @@ permalink:  the_yoga_of_self
 ---
 
 
-Something I’ve always enjoyed about the structure of programming languages--and something that’s been frequently emphasized, thus far, in the Flatiron course--is how programming often reflects the real world (for our purposes here, let’s just take “real” to mean the non-virtual, non-digital planes of existence). In building-up these digital logic systems, we often resort to organizational and philosophical structures that have held reign in our non-virtual lives, often for generations. This, to me, is fascinating.
+Something I’ve always enjoyed about the structure of programming languages--and something that’s been frequently emphasized, thus far, in the Flatiron course--is how programming often reflects the real world (for our purposes here, let’s just take “real world” to mean the non-virtual, non-digital planes of existence). In building-up these digital logic systems, we often resort to organizational and philosophical structures that have held reign in our non-virtual lives, often for generations. This, to me, is fascinating.
 
 One case I’ve been mulling over a lot lately is the notion of `self` in Ruby. Of course the most obvious parallels are quite clear: Ruby is structured so that classes and class instances are their own objects, and these objects are, quite literally, self-aware. This is super useful in a programming sense, but it’s also really interesting in how these objects, at least to a certain degree, share core qualities with sentient beings in the real world.
 
