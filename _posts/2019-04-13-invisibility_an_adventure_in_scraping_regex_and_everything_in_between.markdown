@@ -1,12 +1,12 @@
 ---
 layout: post
 title:      "Invisibility: an Adventure in Scraping, Regex, & Everything In Between"
-date:       2019-04-13 18:27:45 +0000
+date:       2019-04-13 14:27:46 -0400
 permalink:  invisibility_an_adventure_in_scraping_regex_and_everything_in_between
 ---
 
 
-I just wrapped up my first CLI project, which was equal parts challenging and engaging. [Best Music](https://github.com/cyantis/best_music) is a gem that scrapes [Pitchfork.com](https://pitchfork.com/reviews/best/albums/) and returns the previous 12 weeks’ worth of “Best New Albums.” You can browse by genre or score as well as generate a chronological list of albums. It was a ton of fun to build, and I actually intend on firing-up the program weekly to check out new music without the hassle of having to click through to each album review page for scores and descriptions.
+I just wrapped up my first CLI project, which was equal parts challenging and engaging. [Best Music](https://github.com/cyantis/best_music) is a gem that scrapes [Pitchfork.com](https://pitchfork.com/reviews/best/albums/) and returns the previous 12 “Best New Albums.” You can browse by genre or score as well as generate a chronological list of albums. It was a ton of fun to build, and I actually intend on firing-up the program weekly to check out new music without the hassle of having to click through to each album review page for scores and descriptions.
 
 While building my program, I encountered some of the usual pain points: narrowing the project scope when you start coding and realize you were way too ambitious with your initial idea; all the little things that took _forever_ to figure out but mere seconds to actually fix; the the brainpower, sheer will, and cups of coffee consumed while figuring out what “has many” and what “belongs to” what. But rather than writing at length about those, I want to highlight one aspect of my program that unfolded rather mysteriously. What follows is a tale of regex, scraping, invisible characters, and more!
 
