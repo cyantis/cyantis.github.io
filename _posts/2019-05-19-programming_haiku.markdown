@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Programming Haiku"
-date:       2019-05-19 14:37:14 +0000
+date:       2019-05-19 10:37:14 -0400
 permalink:  programming_haiku
 ---
 
@@ -23,14 +23,14 @@ Coding late into the night and
 On into my dreams.  
 
 Each problem I have  
-In life, I instantly wonder:  
+In life I instantly wonder:  
 How an app could solve it?  
 
 Boolean is great:  
 A tool to reduce complexity.  
 Sadly, “real” life doesn’t always abide.  
 
-The longer I code  
+The more time spent coding  
 The less digital and analog  
 Seem distinct.  
 
