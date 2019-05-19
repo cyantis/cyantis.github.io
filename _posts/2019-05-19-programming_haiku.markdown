@@ -24,7 +24,7 @@ On into my dreams.
 
 Each problem I have  
 In life I instantly wonder:  
-How could an app solve it?  
+How could an app solve this?  
 
 Boolean is great:  
 A tool to reduce complexity.  
