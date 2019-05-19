@@ -24,7 +24,7 @@ On into my dreams.
 
 Each problem I have  
 In life I instantly wonder:  
-How an app could solve it?  
+How could an app solve it?  
 
 Boolean is great:  
 A tool to reduce complexity.  
@@ -38,7 +38,7 @@ Belongs to? Has many?
 I ask this daily for orientation.  
 Thanks, Ruby.  
 
-Feyman says to truly  
+Feynman says to truly  
 Understand, teach it to a child.  
 He’s right.  
 
