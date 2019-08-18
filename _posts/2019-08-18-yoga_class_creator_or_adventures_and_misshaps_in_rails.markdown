@@ -1,0 +1,19 @@
+---
+layout: post
+title:      "Yoga Class Creator, or Adventures and Misshaps in Rails"
+date:       2019-08-18 15:23:05 +0000
+permalink:  yoga_class_creator_or_adventures_and_misshaps_in_rails
+---
+
+
+Well, there you have it--I built a Ruby on Rails app. It feels pretty great, especially considering the effort required. I went into this project feeling pretty good about my handle on Rails, but nearly every step in this process through me a curve ball. These hiccups taught me a ton more and, by conquering them, also boosted my confidence, so I’m grateful for the opportunity.
+
+[Yoga Class Creator](https://github.com/cyantis/yoga_class_creator) is lesson plan app for yoga teachers that allows a user (“Teacher”) CRUD functionality in regards to pose sequences for particular yoga class types and accompanying notes and playlist info. Under the hood, it’s a basic Rails app that follows RESTful routing and Model-View-Controller conventions (at least to the best of my present skills and knowledge). Yet, the way in which I organize my associations falls enough out of the norm that I had the chance to explore Rails functionality beyond what was covered in our Flatiron course material. Below I highlight a few key lessons learned:
+
+1. In an effort to mirror exactly the association hierarchy I had in mind--and to really learn how Rails routes work--I decided to eschew convention and nest my associations two-levels deep. This required adding a tiered relationship in many of my forms and views that I’d not encountered prior, and I also had to frequently consult `rake routes` to find the correct nested route path. I’m fully aware now why we avoid this type of structure in our apps--if nothing else, it causes a lot more work--but I’m still glad I took this approach, as it taught me a ton about Rails routes and associations.
+2. I built a `Sessions` controller to help handle authentication but encountered issues with unwanted--but, according to Rails, required--`id params` being passed, which threw errors. This lead to some interesting research on the difference between `resources`--which gives controllers the ability to act broadly on a model both at the collection-level (think `Model.all`) or at the instance-level via the `id` param--and `resource`--which narrows the scope of a controller’s actions to a specific item, thus not needing `id`--in my routes file. Essentially, by setting `Sessions` to `resource`, Rails no longer cared that an unneeded `id` was being passed, and my controller worked perfectly.
+3. I have two models that strike me as equal in terms of the association hierarchy, and each has many of the other, but also belongs to one another. This lead me to set them up with a `has_and_belongs_to_many`relationship, which was new to me. There are interesting aspects of this structure, notably that you support this with a join table (leading me to learn about `rails g migration CreateJoinTable`, which is pretty cool). This structure is fitting for the current scope of my project, but, as pointed out [here](https://flatironschool.com/blog/why-you-dont-need-has-and-belongs-to-many), it could keep me from scaling up my app. In the future, I’ll stick to `has many :through`, as this supports the association structure I need all-the-while allowing more flexibility for future expansion.
+4. Working with my stellar cohort-mate Henry, we found some redundant table columns and unnecessary associations. It’s so valuable to have another set of eyes to examine and question at how you’ve built your app, and talking through your approach is a great opportunity to highlight strengths and vulnerabilities.
+
+There were a ton of other little things that popped-up throughout the building of my project that provided lessons and tested my problem-solving abilities, but these are the big takeaways that I wanted to share in hopes of benefitting future Rails apps builders (myself included!).
+
