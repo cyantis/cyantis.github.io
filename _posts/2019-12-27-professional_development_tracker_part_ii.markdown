@@ -1,0 +1,24 @@
+---
+layout: post
+title:      "Professional Development Tracker, Part II"
+date:       2019-12-27 23:28:58 +0000
+permalink:  professional_development_tracker_part_ii
+---
+
+
+Shirking the advice of my TA, who advocated starting this final project from scratch, I chose to migrate my all-Rails *Professional Development Tracker* app to an API-only Rails back-end and React/Redux front-end. Why? For starters, I’ve never been one to shy away from a challenge. But my decision was, ultimately, one of need: this app is a prototype for a company I’ll be interning with starting in January, and my Rails-only version was always intended to be a mere test run in preparation for this final push. 
+
+To be honest, I thought having the Rails framework already in place would noticeably lighten the workload, and, initially, it did, as the database schema remained in place throughout with few alterations. However, tweaking the serializers, going back through each view to make sure the correct JSON was being rendered, and cleaning-up unused controller actions and files proved to be a bigger job than anticipated.  
+
+The bulk of the work, though, was in translating the Rails front-end to React. A good two days was spent wireframing, mapping out routes, and building out the component hierarchy. But I’m glad I front-loaded all of this planning, as, minus a couple of minor adjustments, the finished app mirrors my initial mock-up.  
+
+Even an app of this scale--i.e. not terribly complex--with clear plans in place from the start, still offered a *generous* helping of React gotchas and lessons learned. What took me a weekend to build out, front and back-end, in Rails consumed the better part of two weeks to get React flowing just on the front-end. Here are a few reasons why:  
+
+* *Round and round with Routes:* Trying to adhere to a strict Container + Component structure, I soon realized that unwanted components will sometimes appear in other components’ views if they share a similar base URL (which is inevitable with RESTful routes). React Router’s `exact path` feature took care of a number of these issues, but a couple of trickier cases required me to write some conditional logic to determine when, and when not, to render a component.  
+* *Let’s talk a second about the React lifecycle!* We were given a nice, concise overview of how/when React renders what in the Flatiron curriculum, but working with async API fetches and local state gives you a whole new insight into the process. I learned that, often, you can avoid`undefined` errors by setting initial local `state` keys with empty arrays for values. In some cases, e.g. when local `state` values head straight for some iteration, I had to set the initial value to `[{}}` to keep React from throwing a fit.  
+* *Auth woes:* While authentication isn’t a requirement for this project, much of my app required authorization to work. I also felt like I should be at least somewhat comfortable with cross-platform auth prior to setting out into the real world. After experimenting for a while with JWTs and localStorage, I quickly realized that there’s still the Rails portion of the auth process that I, honestly, had no idea how to tackle. Many hours of online reading later, I was up and running, thanks most notably to [this article](https://www.sitepoint.com/authenticate-your-rails-api-with-jwt-from-scratch/) and some help from a [developer pal of mine](https://github.com/chrisman). Building out a custom JWT was a great way to grasp the bigger picture of cross-platform authentication.  
+* *Redux?* I initially setup Redux, only to realize that it was hardly needed, as most components required specific enough API calls that a simple fetch to local state worked just as fast and with less code than utilizing Redux. I also ran into some anti-pattern weirdness trying to authenticate with Rails using JWT and Redux reducers. So, I stripped Redux from the project and found that my app threw far fewer errors and seemed to be running a touch faster.  
+* *Redux!* The thing is, utilizing Redux is required to pass my assessment, so, once I got everything working perfectly without it, I pinpointed a few components that would benefit from not having to pass props and added Redux back in. So, for the record, I set-up Redux, took it away, and then added it back.  
+
+Despite the exponential uptick in effort, confusion, and tearing-out-my-hair, there was also a marked increase in the fun I had and the sense of accomplishment I gained in building this app. Also: I’ve come away a solid believer in the power of React. I feel confident in my design, coding, and problem solving skills. And I’m already eager to dive deeper into [Professional Development Tracker](https://github.com/cyantis/prof_dev_tracker_v3), as I push it closer and closer toward production.
+
