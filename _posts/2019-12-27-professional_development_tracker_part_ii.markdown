@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Professional Development Tracker, Part II"
-date:       2019-12-27 23:28:58 +0000
+title:      "Professional Development Tracker, Part II: Adventures in React"
+date:       2019-12-27 18:28:59 -0500
 permalink:  professional_development_tracker_part_ii
 ---
 
@@ -10,9 +10,9 @@ Shirking the advice of my TA, who advocated starting this final project from scr
 
 To be honest, I thought having the Rails framework already in place would noticeably lighten the workload, and, initially, it did, as the database schema remained in place throughout with few alterations. However, tweaking the serializers, going back through each view to make sure the correct JSON was being rendered, and cleaning-up unused controller actions and files proved to be a bigger job than anticipated.  
 
-The bulk of the work, though, was in translating the Rails front-end to React. A good two days was spent wireframing, mapping out routes, and building out the component hierarchy. But I’m glad I front-loaded all of this planning, as, minus a couple of minor adjustments, the finished app mirrors my initial mock-up.  
+The bulk of the work, though, was in translating the Rails front-end to React. A good two days was spent wireframing, mapping out routes, and building out the component hierarchy. I’m glad I front-loaded all of this planning, as, minus a couple of minor adjustments, the finished app mirrors my initial mock-up.  
 
-Even an app of this scale--i.e. not terribly complex--with clear plans in place from the start, still offered a *generous* helping of React gotchas and lessons learned. What took me a weekend to build out, front and back-end, in Rails consumed the better part of two weeks to get React flowing just on the front-end. Here are a few reasons why:  
+But even an app of this scale--i.e. not terribly complex--with clear plans in place from the start, still offered a *generous* helping of React gotchas and lessons learned. What took me a weekend to build out, front and back-end, in Rails consumed the better part of two weeks to get React flowing just on the front-end. Here are a few reasons why:  
 
 * *Round and round with Routes:* Trying to adhere to a strict Container + Component structure, I soon realized that unwanted components will sometimes appear in other components’ views if they share a similar base URL (which is inevitable with RESTful routes). React Router’s `exact path` feature took care of a number of these issues, but a couple of trickier cases required me to write some conditional logic to determine when, and when not, to render a component.  
 * *Let’s talk a second about the React lifecycle!* We were given a nice, concise overview of how/when React renders what in the Flatiron curriculum, but working with async API fetches and local state gives you a whole new insight into the process. I learned that, often, you can avoid`undefined` errors by setting initial local `state` keys with empty arrays for values. In some cases, e.g. when local `state` values head straight for some iteration, I had to set the initial value to `[{}}` to keep React from throwing a fit.  
